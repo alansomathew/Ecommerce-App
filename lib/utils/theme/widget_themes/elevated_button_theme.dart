@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import '../../constants/colors.dart';
-import '../../constants/sizes.dart';
+
+import 'package:ecommerce_app/utils/constants/colors.dart';
+import 'package:ecommerce_app/utils/constants/sizes.dart';
 
 /* -- Light & Dark Elevated Button Themes -- */
 class TElevatedButtonTheme {

@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:ecommerce_app/features/authentication/screens/onboarding/widgets/onboarding_page.dart';
-import 'package:ecommerce_app/features/authentication/screens/onboarding/widgets/onboarding_skip.dart';
+
 import 'package:ecommerce_app/features/authentication/controllers/onboarding/onboarding_controller.dart';
 import 'package:ecommerce_app/features/authentication/screens/onboarding/widgets/onboarding_navigation.dart';
 import 'package:ecommerce_app/features/authentication/screens/onboarding/widgets/onboarding_nextbutton.dart';
-import 'package:ecommerce_app/utils/constants/text_strings.dart';
+import 'package:ecommerce_app/features/authentication/screens/onboarding/widgets/onboarding_page.dart';
+import 'package:ecommerce_app/features/authentication/screens/onboarding/widgets/onboarding_skip.dart';
 import 'package:ecommerce_app/utils/constants/image_strings.dart';
+import 'package:ecommerce_app/utils/constants/text_strings.dart';
 
 class OnBoardingScreen extends StatelessWidget {
   const OnBoardingScreen({super.key});

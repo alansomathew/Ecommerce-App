@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../constants/colors.dart';
+
+import 'package:ecommerce_app/utils/constants/colors.dart';
 
 class TChipTheme {
   TChipTheme._();
