@@ -12,7 +12,6 @@ class SignupScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(),
       body: SingleChildScrollView(
@@ -28,7 +27,7 @@ class SignupScreen extends StatelessWidget {
                 height: TSizes.spaceBtwSections,
               ),
               // Form
-              SignupForm(),
+              const SignupForm(),
               const SizedBox(
                 height: TSizes.spaceBtwSections,
               ),
