@@ -1,20 +1,24 @@
+import 'package:ecommerce_app/features/shop/screens/home/widgets/home_appbar.dart';
+import 'package:flutter/material.dart';
 
 import 'package:ecommerce_app/common/widgets/container/header_component.dart';
-import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: SingleChildScrollView(
         child: Column(
           children: [
             // Header
             PrimaryHeaderComponent(
                 child: Column(
-              children: [],
+              children: [
+                // AppBar
+                HomeAppBar(),
+              ],
             )),
 
             // Search
@@ -30,5 +34,3 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
-
-
