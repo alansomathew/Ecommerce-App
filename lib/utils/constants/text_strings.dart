@@ -9,6 +9,7 @@ class TTexts {
   static const String submit = "Submit";
   static const String appName = "A-Store";
   static const String tContinue = "Continue";
+  static const String tview = "View All";
 
 
   // -- OnBoarding Texts
@@ -66,6 +67,12 @@ class TTexts {
   // -- Home
   static const String homeAppbarTitle = "Good day for shopping";
   static const String homeAppbarSubTitle = "Alanso Mathew";
+
+  // searchbox
+  static const String searchBoxHint = "Search in Store";
+  static const String popularCategories = "Popular Categories";
+
+
 
 
 }
