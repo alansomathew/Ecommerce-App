@@ -20,17 +20,17 @@ class HomeScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            // Header
+            /// Header
             PrimaryHeaderComponent(
               child: Column(
                 children: [
-                  // AppBar
+                  /// AppBar
                   HomeAppBar(),
                   SizedBox(
                     height: TSizes.spaceBtwSections,
                   ),
 
-                  // Search bar
+                  /// Search bar
                   SearchContainer(
                     text: TTexts.searchBoxHint,
                   ),
@@ -38,12 +38,12 @@ class HomeScreen extends StatelessWidget {
                     height: TSizes.spaceBtwSections,
                   ),
 
-                  // Categories
+                  /// Categories
                   Padding(
                     padding: EdgeInsets.only(left: TSizes.defaultSpace),
                     child: Column(
                       children: [
-                        // Headings
+                        /// Headings
                         SectionHeading(
                           title: TTexts.popularCategories,
                           showActionButton: false,
@@ -53,7 +53,7 @@ class HomeScreen extends StatelessWidget {
                           height: TSizes.spaceBtwItems,
                         ),
 
-                        // Categories
+                        /// Categories
                         HomeCategory(),
                       ],
                     ),
@@ -62,14 +62,21 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
 
-            // body
+            /// body
             Padding(
               padding: EdgeInsets.all(TSizes.defaultSpace),
-              child: PromoSlider(
-                banners: [
-                  TImages.promoBanner1,
-                  TImages.promoBanner2,
-                  TImages.promoBanner3
+              child: Column(
+                children: [
+                  /// ---- promo slider---- 
+                  PromoSlider(
+                    banners: [
+                      TImages.promoBanner1,
+                      TImages.promoBanner2,
+                      TImages.promoBanner3
+                    ],
+                  ),
+
+                  /// popular products
                 ],
               ),
             ),

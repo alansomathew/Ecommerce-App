@@ -20,7 +20,7 @@ class LoginForm extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: TSizes.spaceBtwSections),
         child: Column(
           children: [
-            // email field
+            /// email field
             TextFormField(
               decoration: const InputDecoration(
                 prefixIcon: Icon(Iconsax.direct_right),
@@ -30,7 +30,7 @@ class LoginForm extends StatelessWidget {
             const SizedBox(
               height: TSizes.spaceBtwInputFields,
             ),
-            // password field
+            /// password field
             TextFormField(
               obscureText: true,
               decoration: InputDecoration(
@@ -41,16 +41,16 @@ class LoginForm extends StatelessWidget {
                   child: const Icon(Iconsax.eye_slash),
                 ),
               ),
-              //                      validator:,
+              ///                      validator:,
             ),
             const SizedBox(
               height: TSizes.spaceBtwInputFields / 2,
             ),
-            // remember and forget password
+            /// remember and forget password
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                /// remember Me
+                //// remember Me
                 Row(
                   children: [
                     Checkbox(
@@ -60,7 +60,7 @@ class LoginForm extends StatelessWidget {
                     const Text(TTexts.rememberMe),
                   ],
                 ),
-                // forget Password
+                /// forget Password
                 TextButton(
                   onPressed: () => Get.to(() => const ForgetPassword()),
                   child: const Text(TTexts.forgetPassword),
@@ -70,7 +70,7 @@ class LoginForm extends StatelessWidget {
             const SizedBox(
               height: TSizes.spaceBtwSections,
             ),
-            // signIn  button
+            /// signIn  button
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
@@ -82,7 +82,7 @@ class LoginForm extends StatelessWidget {
             const SizedBox(
               height: TSizes.spaceBtwItems,
             ),
-            // create accoount button
+            /// create accoount button
             SizedBox(
               width: double.infinity,
               child: OutlinedButton(
