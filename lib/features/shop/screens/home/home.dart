@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/utils/constants/image_strings.dart';
 import 'package:flutter/material.dart';
 
 import 'package:ecommerce_app/common/widgets/container/header_component.dart';
@@ -5,6 +6,7 @@ import 'package:ecommerce_app/common/widgets/container/search_container.dart';
 import 'package:ecommerce_app/common/widgets/texts/section_heading.dart';
 import 'package:ecommerce_app/features/shop/screens/home/widgets/home_appbar.dart';
 import 'package:ecommerce_app/features/shop/screens/home/widgets/home_category.dart';
+import 'package:ecommerce_app/features/shop/screens/home/widgets/promo_slider.dart';
 import 'package:ecommerce_app/utils/constants/colors.dart';
 import 'package:ecommerce_app/utils/constants/sizes.dart';
 import 'package:ecommerce_app/utils/constants/text_strings.dart';
@@ -60,14 +62,20 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
 
-            // Products
-
-            // Footer
+            // body
+            Padding(
+              padding: EdgeInsets.all(TSizes.defaultSpace),
+              child: PromoSlider(
+                banners: [
+                  TImages.promoBanner1,
+                  TImages.promoBanner2,
+                  TImages.promoBanner3
+                ],
+              ),
+            ),
           ],
         ),
       ),
     );
   }
 }
-
-
