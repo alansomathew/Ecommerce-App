@@ -82,7 +82,17 @@ class HomeScreen extends StatelessWidget {
                   ),
 
                   /// popular products
-                  GridLayout(itemCount: 4, itemBuilder: (_ , index ) =>const ProductCardVertical() ,),
+                  SectionHeading(
+                    title: TTexts.popularProducts,
+                    onPressed: () {},
+                  ),
+                  const SizedBox(
+                    height: TSizes.spaceBtwItems,
+                  ),
+                  GridLayout(
+                    itemCount: 4,
+                    itemBuilder: (_, index) => const ProductCardVertical(),
+                  ),
                 ],
               ),
             ),
@@ -92,5 +102,3 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
-
-

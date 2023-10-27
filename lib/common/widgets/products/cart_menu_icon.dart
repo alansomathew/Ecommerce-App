@@ -6,11 +6,11 @@ import 'package:ecommerce_app/utils/constants/colors.dart';
 class CardCounterIcon extends StatelessWidget {
   const CardCounterIcon({
     super.key,
-    required this.iconColor,
+    this.iconColor,
     required this.onPressed,
   });
 
-  final Color iconColor;
+  final Color? iconColor;
   final VoidCallback onPressed;
 
   @override
