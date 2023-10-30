@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 
 import 'package:ecommerce_app/common/widgets/appbar/appbar.dart';
 import 'package:ecommerce_app/common/widgets/appbar/tabbar.dart';
-import 'package:ecommerce_app/common/widgets/container/rounded_container.dart';
+import 'package:ecommerce_app/common/widgets/brands/brand_card.dart';
 import 'package:ecommerce_app/common/widgets/container/search_container.dart';
 import 'package:ecommerce_app/common/widgets/layout/grid_layout.dart';
 import 'package:ecommerce_app/common/widgets/products/cart_menu_icon.dart';
 import 'package:ecommerce_app/common/widgets/texts/section_heading.dart';
-import 'package:ecommerce_app/features/shop/screens/store/widgets/brand_card.dart';
+import 'package:ecommerce_app/features/shop/screens/store/widgets/category_tab.dart';
 import 'package:ecommerce_app/utils/constants/colors.dart';
 import 'package:ecommerce_app/utils/constants/sizes.dart';
 import 'package:ecommerce_app/utils/helpers/helper_functions.dart';
@@ -100,28 +100,11 @@ class StoreScreen extends StatelessWidget {
           },
           body: const TabBarView(
             children: [
-              Padding(
-                padding: EdgeInsets.all(TSizes.defaultSpace),
-                child: Column(
-                  //* Brands
-                  children: [
-                    RoundedContainer(
-                      showBorder: true,
-                      borderColor: TColors.darkGrey,
-                      backgroundColor: Colors.transparent,
-                      margin: EdgeInsets.only(bottom: TSizes.spaceBtwItems),
-                      child: Column(
-                        children: [
-                          //* Brand with Product Count 
-                          BrandCard(showBorder: false),
-
-
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+            CategoryTab() ,
+            CategoryTab() ,
+            CategoryTab() ,
+            CategoryTab() ,
+            CategoryTab() ,
             ],
           ),
         ),
