@@ -28,7 +28,7 @@ class VerticalImageText extends StatelessWidget {
         padding: const EdgeInsets.only(right: TSizes.spaceBtwItems),
         child: Column(
           children: [
-            // circular icon
+            //? circular icon
             Container(
               width: 56,
               height: 56,
@@ -50,17 +50,19 @@ class VerticalImageText extends StatelessWidget {
               height: TSizes.spaceBtwItems / 2,
             ),
 
-            // Text
-            SizedBox(
-              width: 55,
-              child: Text(
-                title,
-                style: Theme.of(context)
-                    .textTheme
-                    .labelMedium!
-                    .apply(color: textColor),
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
+            //? Text
+            Expanded(
+              child: SizedBox(
+                width: 55,
+                child: Text(
+                  title,
+                  style: Theme.of(context)
+                      .textTheme
+                      .labelMedium!
+                      .apply(color: textColor),
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                ),
               ),
             ),
           ],

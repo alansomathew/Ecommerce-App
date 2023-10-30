@@ -18,7 +18,7 @@ class ForgetPassword extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            /// hEADINGS
+            //* hEADINGS
             Text(
               TTexts.forgetPasswordTitle,
               style: Theme.of(context).textTheme.headlineMedium,
@@ -36,7 +36,7 @@ class ForgetPassword extends StatelessWidget {
               height: TSizes.spaceBtwSections * 2,
             ),
 
-            /// Text Fields
+            //* Text Fields
             TextFormField(
               decoration: const InputDecoration(
                   hintText: TTexts.email,
@@ -46,7 +46,7 @@ class ForgetPassword extends StatelessWidget {
               height: TSizes.spaceBtwSections,
             ),
 
-            /// Button
+            //* Button
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(

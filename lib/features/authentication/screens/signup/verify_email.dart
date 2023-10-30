@@ -28,7 +28,7 @@ class VerifyEmailScreen extends StatelessWidget {
           padding: const EdgeInsets.all(TSizes.defaultSpace),
           child: Column(
             children: [
-              /// image
+              //* image
               Image(
                 image: const AssetImage(TImages.deliveredEmailIllustration),
                 width: THelperFunctions.screenWidth() * 0.6,
@@ -37,7 +37,7 @@ class VerifyEmailScreen extends StatelessWidget {
                 height: TSizes.spaceBtwSections,
               ),
 
-              /// title and subTitle
+              //* title and subTitle
               Text(
                 TTexts.confirmEmail,
                 style: Theme.of(context).textTheme.headlineMedium,
@@ -63,7 +63,7 @@ class VerifyEmailScreen extends StatelessWidget {
                 height: TSizes.spaceBtwSections,
               ),
 
-              /// buttons
+              //* buttons
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(

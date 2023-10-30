@@ -11,22 +11,22 @@ class TLocalStorage {
 
   final _storage = GetStorage();
 
-  // Generic method to save data
+  //? Generic method to save data
   Future<void> saveData<T>(String key, T value) async {
     await _storage.write(key, value);
   }
 
-  // Generic method to read data
+  //? Generic method to read data
   T? readData<T>(String key) {
     return _storage.read<T>(key);
   }
 
-  // Generic method to remove data
+  //? Generic method to remove data
   Future<void> removeData(String key) async {
     await _storage.remove(key);
   }
 
-  // Clear all data in storage
+  //? Clear all data in storage
   Future<void> clearAll() async {
     await _storage.erase();
   }
@@ -37,16 +37,16 @@ class TLocalStorage {
 
 // LocalStorage localStorage = LocalStorage();
 //
-// // Save data
+//? Save data
 // localStorage.saveData('username', 'JohnDoe');
 //
-// // Read data
+//? Read data
 // String? username = localStorage.readData<String>('username');
-// print('Username: $username'); // Output: Username: JohnDoe
+// print('Username: $username'); //? Output: Username: JohnDoe
 //
-// // Remove data
+//? Remove data
 // localStorage.removeData('username');
 //
-// // Clear all data
+//? Clear all data
 // localStorage.clearAll();
 

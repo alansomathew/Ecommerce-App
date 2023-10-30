@@ -31,20 +31,20 @@ class ProductCardVertical extends StatelessWidget {
         ),
         child: Column(
           children: [
-            /// Thumbnail
+            //* Thumbnail
             RoundedContainer(
               height: 180,
               padding: const EdgeInsets.all(TSizes.sm),
               backgroundColor: dark ? TColors.dark : TColors.light,
               child: Stack(
                 children: [
-                  /// Thumbnail Image
+                  //* Thumbnail Image
                   const RoundedImage(
                     imageUrl: TImages.productImage1,
                     applyImageRadius: true,
                   ),
 
-                  /// sale tag
+                  //* sale tag
                   Positioned(
                     top: 12,
                     child: RoundedContainer(
@@ -62,7 +62,7 @@ class ProductCardVertical extends StatelessWidget {
                     ),
                   ),
 
-                  /// favourite icon
+                  //* favourite icon
                   const Positioned(
                       top: 0,
                       right: 0,
@@ -77,7 +77,7 @@ class ProductCardVertical extends StatelessWidget {
               height: TSizes.spaceBtwItems / 2,
             ),
 
-            /// Details
+            //* Details
             const Padding(
               padding: EdgeInsets.only(left: TSizes.sm),
               child: Column(

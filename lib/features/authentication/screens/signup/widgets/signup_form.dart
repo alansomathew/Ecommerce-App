@@ -17,7 +17,7 @@ class SignupForm extends StatelessWidget {
     return Form(
       child: Column(
         children: [
-          /// first and last name
+          //* first and last name
           Row(
             children: [
               Expanded(
@@ -47,7 +47,7 @@ class SignupForm extends StatelessWidget {
             height: TSizes.spaceBtwInputFields,
           ),
 
-          /// username
+          //* username
           TextFormField(
             expands: false,
             decoration: const InputDecoration(
@@ -59,7 +59,7 @@ class SignupForm extends StatelessWidget {
             height: TSizes.spaceBtwInputFields,
           ),
 
-          /// email
+          //* email
           TextFormField(
             expands: false,
             decoration: const InputDecoration(
@@ -71,7 +71,7 @@ class SignupForm extends StatelessWidget {
             height: TSizes.spaceBtwInputFields,
           ),
 
-          /// phone Number
+          //* phone Number
           TextFormField(
             expands: false,
             decoration: const InputDecoration(
@@ -83,7 +83,7 @@ class SignupForm extends StatelessWidget {
             height: TSizes.spaceBtwInputFields,
           ),
 
-          /// password
+          //* password
           TextFormField(
             obscureText: true,
             decoration: InputDecoration(
@@ -94,18 +94,18 @@ class SignupForm extends StatelessWidget {
                 child: const Icon(Iconsax.eye_slash),
               ),
             ),
-            /// validator:,
+            //* validator:,
           ),
           const SizedBox(
             height: TSizes.spaceBtwInputFields,
           ),
 
-          /// Terms and conditions checkbox
+          //* Terms and conditions checkbox
           const TemsAndCondition(),
           const SizedBox(
             height: TSizes.spaceBtwItems,
           ),
-          /// signup button
+          //* signup button
           SizedBox(
             width: double.infinity,
             child: ElevatedButton(

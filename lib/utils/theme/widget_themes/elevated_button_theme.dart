@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:ecommerce_app/utils/constants/colors.dart';
 import 'package:ecommerce_app/utils/constants/sizes.dart';
 
-/* -- Light & Dark Elevated Button Themes -- */
+//* -- Light & Dark Elevated Button Themes -- *//
 class TElevatedButtonTheme {
-  TElevatedButtonTheme._(); //To avoid creating instances
+  TElevatedButtonTheme._(); //?To avoid creating instances
 
 
-  /* -- Light Theme -- */
+  //* -- Light Theme -- *//
   static final lightElevatedButtonTheme  = ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
       elevation: 0,
@@ -23,7 +23,7 @@ class TElevatedButtonTheme {
     ),
   );
 
-  /* -- Dark Theme -- */
+  //* -- Dark Theme -- *//
   static final darkElevatedButtonTheme = ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
       elevation: 0,

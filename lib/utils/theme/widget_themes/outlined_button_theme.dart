@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:ecommerce_app/utils/constants/colors.dart';
 import 'package:ecommerce_app/utils/constants/sizes.dart';
 
-/* -- Light & Dark Outlined Button Themes -- */
+//?* -- Light & Dark Outlined Button Themes -- *//
 class TOutlinedButtonTheme {
-  TOutlinedButtonTheme._(); //To avoid creating instances
+  TOutlinedButtonTheme._(); //?To avoid creating instances
 
 
-  /* -- Light Theme -- */
+  //?* -- Light Theme -- *//
   static final lightOutlinedButtonTheme  = OutlinedButtonThemeData(
     style: OutlinedButton.styleFrom(
       elevation: 0,
@@ -20,7 +20,7 @@ class TOutlinedButtonTheme {
     ),
   );
 
-  /* -- Dark Theme -- */
+  //?* -- Dark Theme -- *//
   static final darkOutlinedButtonTheme = OutlinedButtonThemeData(
     style: OutlinedButton.styleFrom(
       foregroundColor: TColors.light,

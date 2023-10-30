@@ -25,7 +25,7 @@ class ResetPassword extends StatelessWidget {
           padding: EdgeInsets.all(TSizes.defaultSpace),
           child: Column(
             children: [
-              /// Image with 60 % of screen width
+              //* Image with 60 % of screen width
               Image(
                 image: AssetImage(TImages.deliveredEmailIllustration),
                 width: THelperFunctions.screenWidth() * 0.6,
@@ -34,7 +34,7 @@ class ResetPassword extends StatelessWidget {
                 height: TSizes.spaceBtwSections,
               ),
 
-              /// title and subTitle
+              //* title and subTitle
               Text(
                 TTexts.changeYourPasswordTitle,
                 style: Theme.of(context).textTheme.headlineMedium,
@@ -53,7 +53,7 @@ class ResetPassword extends StatelessWidget {
                 height: TSizes.spaceBtwSections,
               ),
 
-              /// button
+              //* button
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(

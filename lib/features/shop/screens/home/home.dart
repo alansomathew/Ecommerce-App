@@ -22,17 +22,17 @@ class HomeScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            /// Header
+            //* Header
             const PrimaryHeaderComponent(
               child: Column(
                 children: [
-                  /// AppBar
+                  //* AppBar
                   HomeAppBar(),
                   SizedBox(
                     height: TSizes.spaceBtwSections,
                   ),
 
-                  /// Search bar
+                  //* Search bar
                   SearchContainer(
                     text: TTexts.searchBoxHint,
                   ),
@@ -40,12 +40,12 @@ class HomeScreen extends StatelessWidget {
                     height: TSizes.spaceBtwSections,
                   ),
 
-                  /// Categories
+                  //* Categories
                   Padding(
                     padding: EdgeInsets.only(left: TSizes.defaultSpace),
                     child: Column(
                       children: [
-                        /// Headings
+                        //* Headings
                         SectionHeading(
                           title: TTexts.popularCategories,
                           showActionButton: false,
@@ -55,7 +55,7 @@ class HomeScreen extends StatelessWidget {
                           height: TSizes.spaceBtwItems,
                         ),
 
-                        /// Categories
+                        //* Categories
                         HomeCategory(),
                       ],
                     ),
@@ -64,12 +64,12 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
 
-            /// body
+            //* body
             Padding(
               padding: const EdgeInsets.all(TSizes.defaultSpace),
               child: Column(
                 children: [
-                  /// ---- promo slider----
+                  //* ---- promo slider----
                   const PromoSlider(
                     banners: [
                       TImages.promoBanner1,
@@ -81,7 +81,7 @@ class HomeScreen extends StatelessWidget {
                     height: TSizes.spaceBtwSections,
                   ),
 
-                  /// popular products
+                  //* popular products
                   SectionHeading(
                     title: TTexts.popularProducts,
                     onPressed: () {},

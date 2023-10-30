@@ -1,8 +1,8 @@
 
-/// This class contains all the App Text in String formats.
+//* This class contains all the App Text in String formats.
 class TTexts {
 
-  // -- GLOBAL Texts
+  //? -- GLOBAL Texts
   static const String and = "and";
   static const String skip = "Skip";
   static const String done = "Done";
@@ -12,7 +12,7 @@ class TTexts {
   static const String tview = "View All";
 
 
-  // -- OnBoarding Texts
+  //? -- OnBoarding Texts
   static const String onBoardingTitle1 = "Choose your product";
   static const String onBoardingTitle2 = "Select Payment Method";
   static const String onBoardingTitle3 = "Deliver at your door step";
@@ -22,7 +22,7 @@ class TTexts {
   static const String onBoardingSubTitle3 = "From Our Doorstep to Yours - Swift, Secure, and Contactless Delivery!";
 
 
-  // -- Authentication Forms
+  //? -- Authentication Forms
   static const String firstName = "First Name";
   static const String lastName = "Last Name";
   static const String email = "E-Mail";
@@ -46,7 +46,7 @@ class TTexts {
   
 
 
-  // -- Authentication Headings
+  //? -- Authentication Headings
   static const String loginTitle = "Welcome back,";
   static const String loginSubTitle = "Discover Limitless Choices and Unmatched Convenience.";
   static const String signupTitle = "Let’s create your account";
@@ -61,14 +61,14 @@ class TTexts {
   static const String yourAccountCreatedSubTitle = "Welcome to Your Ultimate Shopping Destination: Your Account is Created, Unleash the Joy of Seamless Online Shopping!";
 
 
-  // -- Product
+  //? -- Product
   static const String popularProducts = "Popular Products";
 
-  // -- Home
+  //? -- Home
   static const String homeAppbarTitle = "Good day for shopping";
   static const String homeAppbarSubTitle = "Alanso Mathew";
 
-  // searchbox
+  //? searchbox
   static const String searchBoxHint = "Search in Store";
   static const String popularCategories = "Popular Categories";
 

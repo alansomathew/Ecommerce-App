@@ -25,7 +25,7 @@ class SuccessScreen extends StatelessWidget {
           padding: TSpacingStyle.paddingWithAppBarHeight,
           child: Column(
             children: [
-              // image
+              //? image
               Image(
                 image: AssetImage(image),
                 width: THelperFunctions.screenWidth() * 0.6,
@@ -34,7 +34,7 @@ class SuccessScreen extends StatelessWidget {
                 height: TSizes.spaceBtwSections,
               ),
 
-              // title and subTitle
+              //? title and subTitle
               Text(
                 title,
                 style: Theme.of(context).textTheme.headlineMedium,
@@ -53,7 +53,7 @@ class SuccessScreen extends StatelessWidget {
                 height: TSizes.spaceBtwSections,
               ),
 
-              // button
+              //? button
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(

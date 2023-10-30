@@ -19,7 +19,7 @@ class OnBoardingScreen extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          /// horizontal scrollable pages
+          //* horizontal scrollable pages
           PageView(
             controller: controller.pageController,
             onPageChanged: controller.updatePageIndicator,
@@ -42,13 +42,13 @@ class OnBoardingScreen extends StatelessWidget {
             ],
           ),
 
-          /// skip button
+          //* skip button
           const OnBoardingSkip(),
 
-          /// bot navigation smooth page indicator
+          //* bot navigation smooth page indicator
           const OnBoardingNavigation(),
 
-          /// circular button
+          //* circular button
           const OnBoardingNextButton(),
         ],
       ),

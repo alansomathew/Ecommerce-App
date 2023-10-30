@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 
 import 'package:ecommerce_app/utils/constants/colors.dart';
 
-/// Custom Class for Light & Dark Text Themes
+//* Custom Class for Light & Dark Text Themes
 class TTextTheme {
-  TTextTheme._(); // To avoid creating instances
+  TTextTheme._(); //? To avoid creating instances
 
-  /// Customizable Light Text Theme
+  //* Customizable Light Text Theme
   static TextTheme lightTextTheme = TextTheme(
     headlineLarge: const TextStyle().copyWith(fontSize: 32.0, fontWeight: FontWeight.bold, color: TColors.dark),
     headlineMedium: const TextStyle().copyWith(fontSize: 24.0, fontWeight: FontWeight.w600, color: TColors.dark),
@@ -24,7 +24,7 @@ class TTextTheme {
     labelMedium: const TextStyle().copyWith(fontSize: 12.0, fontWeight: FontWeight.normal, color: TColors.dark.withOpacity(0.5)),
   );
 
-  /// Customizable Dark Text Theme
+  //* Customizable Dark Text Theme
   static TextTheme darkTextTheme = TextTheme(
     headlineLarge: const TextStyle().copyWith(fontSize: 32.0, fontWeight: FontWeight.bold, color: TColors.light),
     headlineMedium: const TextStyle().copyWith(fontSize: 24.0, fontWeight: FontWeight.w600, color: TColors.light),
