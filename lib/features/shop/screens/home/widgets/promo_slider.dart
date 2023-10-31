@@ -41,7 +41,7 @@ class PromoSlider extends StatelessWidget {
             children: [
               for (int i = 0; i < banners.length; i++)
                 CircularContainer(
-                  margin: EdgeInsets.only(right: 10),
+                  margin: const EdgeInsets.only(right: 10),
                   width: 20,
                   height: 4,
                   backgroundColor: controller.carouselCurrentIndex.value == i
