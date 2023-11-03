@@ -1,4 +1,6 @@
+import 'package:ecommerce_app/features/shop/screens/product_details/product_detail.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 import 'package:ecommerce_app/common/styles/shadows.dart';
@@ -20,7 +22,7 @@ class ProductCardVertical extends StatelessWidget {
   Widget build(BuildContext context) {
     final dark = THelperFunctions.isDarkMode(context);
     return GestureDetector(
-      onTap: () {},
+      onTap: () => Get.to(() => const ProductDetail()),
       child: Container(
         width: 180,
         padding: const EdgeInsets.all(1),
@@ -90,7 +92,9 @@ class ProductCardVertical extends StatelessWidget {
                   SizedBox(
                     height: TSizes.spaceBtwItems / 2,
                   ),
-                  BrandTitleWithVerifiedIcon(title: 'Nike',),
+                  BrandTitleWithVerifiedIcon(
+                    title: 'Nike',
+                  ),
 
                   // Spacer
                 ],
@@ -133,5 +137,3 @@ class ProductCardVertical extends StatelessWidget {
     );
   }
 }
-
-
