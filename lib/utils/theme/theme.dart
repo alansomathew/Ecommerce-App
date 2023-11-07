@@ -9,13 +9,14 @@ import 'package:ecommerce_app/utils/theme/widget_themes/elevated_button_theme.da
 import 'package:ecommerce_app/utils/theme/widget_themes/outlined_button_theme.dart';
 import 'package:ecommerce_app/utils/theme/widget_themes/text_field_theme.dart';
 import 'package:ecommerce_app/utils/theme/widget_themes/text_theme.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class TAppTheme {
   TAppTheme._();
 
   static ThemeData lightTheme = ThemeData(
     useMaterial3: true,
-    fontFamily: 'Poppins',
+    fontFamily: GoogleFonts.josefinSans().fontFamily, //or u can use 'Poppins'
     disabledColor: TColors.grey,
     brightness: Brightness.light,
     primaryColor: TColors.primary,
@@ -32,7 +33,7 @@ class TAppTheme {
 
   static ThemeData darkTheme = ThemeData(
     useMaterial3: true,
-    fontFamily: 'Poppins',
+    fontFamily: GoogleFonts.josefinSans().fontFamily, //or u can use 'Poppins'
     disabledColor: TColors.grey,
     brightness: Brightness.dark,
     primaryColor: TColors.primary,

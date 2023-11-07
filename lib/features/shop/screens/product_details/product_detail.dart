@@ -4,8 +4,10 @@ import 'package:ecommerce_app/features/shop/screens/product_details/widget/produ
 import 'package:ecommerce_app/features/shop/screens/product_details/widget/product_image_silder.dart';
 import 'package:ecommerce_app/features/shop/screens/product_details/widget/product_meta_data.dart';
 import 'package:ecommerce_app/features/shop/screens/product_details/widget/rating_share_widget.dart';
+import 'package:ecommerce_app/features/shop/screens/product_reviews/product_review_screen.dart';
 import 'package:ecommerce_app/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:readmore/readmore.dart';
 
@@ -38,7 +40,6 @@ class ProductDetail extends StatelessWidget {
                   //? Price Title,stock,Brand
                   const ProductMetaData(),
                   const SizedBox(height: TSizes.spaceBtwItems),
-
 
                   //? Attributes
                   const ProductAttributes(),
@@ -80,7 +81,8 @@ class ProductDetail extends StatelessWidget {
                         showActionButton: false,
                       ),
                       IconButton(
-                        onPressed: () {},
+                        onPressed: () =>
+                            Get.to(() => const ProductReviewScreen()),
                         icon: const Icon(
                           Iconsax.arrow_right_3,
                           size: 18,

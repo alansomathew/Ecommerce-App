@@ -5,7 +5,7 @@ import 'package:ecommerce_app/common/widgets/texts/product_title_text.dart';
 import 'package:ecommerce_app/utils/constants/colors.dart';
 import 'package:ecommerce_app/utils/constants/enums.dart';
 import 'package:ecommerce_app/utils/constants/sizes.dart';
-import 'package:ecommerce_app/utils/helpers/helper_functions.dart';
+// import 'package:ecommerce_app/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 
 class ProductMetaData extends StatelessWidget {
@@ -13,7 +13,7 @@ class ProductMetaData extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final dark = THelperFunctions.isDarkMode(context);
+    // final dark = THelperFunctions.isDarkMode(context);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       
