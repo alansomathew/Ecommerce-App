@@ -1,3 +1,5 @@
+import 'package:ecommerce_app/features/shop/screens/cart/cart.dart';
+import 'package:ecommerce_app/features/shop/screens/order/order.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
@@ -70,17 +72,15 @@ class SettingsScreen extends StatelessWidget {
                     onTap: () => Get.to(() => const UserAddressScreen()),
                   ),
                   SettingsMenuTile(
-                    icon: Iconsax.shopping_cart,
-                    title: 'My Cart',
-                    subTitle: 'Add, remove products and move to checkout',
-                    onTap: () {},
-                  ),
+                      icon: Iconsax.shopping_cart,
+                      title: 'My Cart',
+                      subTitle: 'Add, remove products and move to checkout',
+                      onTap: () => Get.to(() => const CartScreen())),
                   SettingsMenuTile(
-                    icon: Iconsax.bag_tick,
-                    title: 'My Orders',
-                    subTitle: 'In-progress and Completed Orders',
-                    onTap: () {},
-                  ),
+                      icon: Iconsax.bag_tick,
+                      title: 'My Orders',
+                      subTitle: 'In-progress and Completed Orders',
+                      onTap: () => Get.to(() => const OrderScreen())),
                   SettingsMenuTile(
                     icon: Iconsax.bank,
                     title: 'Bank Account',
