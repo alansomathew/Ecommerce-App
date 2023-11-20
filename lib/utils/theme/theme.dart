@@ -16,7 +16,7 @@ class TAppTheme {
 
   static ThemeData lightTheme = ThemeData(
     useMaterial3: true,
-    fontFamily: GoogleFonts.josefinSans().fontFamily, //or u can use 'Poppins'
+    fontFamily: GoogleFonts.poppins().fontFamily, //or u can use 'Poppins'
     disabledColor: TColors.grey,
     brightness: Brightness.light,
     primaryColor: TColors.primary,
@@ -33,7 +33,7 @@ class TAppTheme {
 
   static ThemeData darkTheme = ThemeData(
     useMaterial3: true,
-    fontFamily: GoogleFonts.josefinSans().fontFamily, //or u can use 'Poppins'
+    fontFamily: GoogleFonts.poppins().fontFamily, //or u can use 'Poppins'
     disabledColor: TColors.grey,
     brightness: Brightness.dark,
     primaryColor: TColors.primary,

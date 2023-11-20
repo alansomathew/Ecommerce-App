@@ -1,5 +1,6 @@
 import 'package:ecommerce_app/common/widgets/layout/grid_layout.dart';
 import 'package:ecommerce_app/common/widgets/products/porduct_card_vertical.dart';
+import 'package:ecommerce_app/features/shop/screens/all_products/all_products.dart';
 import 'package:ecommerce_app/utils/constants/image_strings.dart';
 import 'package:flutter/material.dart';
 
@@ -12,6 +13,7 @@ import 'package:ecommerce_app/features/shop/screens/home/widgets/promo_slider.da
 import 'package:ecommerce_app/utils/constants/colors.dart';
 import 'package:ecommerce_app/utils/constants/sizes.dart';
 import 'package:ecommerce_app/utils/constants/text_strings.dart';
+import 'package:get/get.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -87,7 +89,7 @@ class HomeScreen extends StatelessWidget {
                   //* popular products
                   SectionHeading(
                     title: TTexts.popularProducts,
-                    onPressed: () {},
+                    onPressed: () => Get.to(() => const AllProducts()),
                   ),
                   const SizedBox(
                     height: TSizes.spaceBtwItems,
