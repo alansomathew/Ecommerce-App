@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/data/repositories/authentication_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'app.dart';
@@ -12,8 +13,8 @@ Future<void> main() async {
 // Todo: Await Native Splash
 // Todo: Initialize Firebase
 
-  // await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform)
-  //     .then((FirebaseApp value) => Get.put(AuthenticationRepository()));
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform)
+      .then((FirebaseApp value) => Get.put(AuthenticationRepository()));
 // Todo: Initialize Authentication
 
 // Todo: Load all the Material Design / Themes / Localizations / Bindings
