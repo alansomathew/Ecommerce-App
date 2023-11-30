@@ -1,4 +1,6 @@
+import 'package:ecommerce_app/features/authentication/controllers/signup/signup_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import 'package:ecommerce_app/utils/constants/colors.dart';
 import 'package:ecommerce_app/utils/constants/sizes.dart';
@@ -12,15 +14,19 @@ class TemsAndCondition extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(SignupController());
     final dark = THelperFunctions.isDarkMode(context);
     return Row(
       children: [
         SizedBox(
           width: 24,
           height: 24,
-          child: Checkbox(
-            value: true,
-            onChanged: (value) {},
+          child: Obx(
+            () => Checkbox(
+              value: controller.privacyPolicy.value,
+              onChanged: (value) => controller.privacyPolicy.value =
+                  !controller.privacyPolicy.value,
+            ),
           ),
         ),
         const SizedBox(

@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:get/get.dart';
@@ -11,6 +12,7 @@ class AuthenticationRepository extends GetxController {
 
   //* Variables
   final deviceStorage = GetStorage();
+  final _auth = FirebaseAuth.instance;
 
   //* Called from main.dart on app launch
   @override
@@ -40,6 +42,16 @@ class AuthenticationRepository extends GetxController {
   // * [EmailAuthentication] - SignIn
 
   // * [EmailAuthentication] - Register
+
+  Future<UserCredential> registerWithEmailAndPassword(
+      String email, String password) async {
+    try {
+      return await _auth.createUserWithEmailAndPassword(
+          email: email, password: password);
+    } catch (e) {
+      throw 'something went wrong. Please try again';
+    }
+  }
 
   // * [ReAuthenticate] - ReAuthenticate User
 
