@@ -57,7 +57,7 @@ class SignupController extends GetxController {
 
       // Register user in the firebase Authentication & save user data in the firebase
 
-      final userCredential = await AuthenticationRepository.inistance
+      final userCredential = await AuthenticationRepository.instance
           .registerWithEmailAndPassword(
               email.text.trim(), password.text.trim());
 
@@ -85,7 +85,7 @@ class SignupController extends GetxController {
       );
 
       // Move to verify Email Screen
-      Get.to(() => const VerifyEmailScreen());
+      Get.to(() => VerifyEmailScreen(email: email.text.trim()));
     } catch (e) {
       // Remove loader
       FullscreenLoader.stopLoadingDialog();

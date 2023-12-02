@@ -20,7 +20,7 @@ class FullscreenLoader {
       barrierDismissible:
           false, //The dialog can't be dismissed by tapping outside of it
       builder: (_) => PopScope(
-        canPop = false, //Disable popping with the back button
+        canPop: false, //Disable popping with the back button
         child: Container(
           color: THelperFunctions.isDarkMode(Get.context!)
               ? TColors.dark
