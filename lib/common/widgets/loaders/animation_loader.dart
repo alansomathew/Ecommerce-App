@@ -33,6 +33,7 @@ class AnimationLoaderWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           //* Animation
           Lottie.asset(animation,

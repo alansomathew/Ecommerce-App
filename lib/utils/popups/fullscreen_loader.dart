@@ -27,12 +27,14 @@ class FullscreenLoader {
               : TColors.white,
           width: double.infinity,
           height: double.infinity,
-          child: Column(
-            // mainAxisAlignment:MainAxisAlignment.center,
-            children: [
-              const SizedBox(height: 250), //Adjust the spacing as needed
-              AnimationLoaderWidget(text: text, animation: animation),
-            ],
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                const SizedBox(height: 250), //Adjust the spacing as needed
+                AnimationLoaderWidget(text: text, animation: animation),
+              ],
+            ),
           ),
         ),
       ),
