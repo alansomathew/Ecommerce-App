@@ -1,37 +1,45 @@
 {
   "project_info": {
-    "project_number": "112305148730",
-    "project_id": "e-commerce-app-ef858",
-    "storage_bucket": "e-commerce-app-ef858.appspot.com"
+    "project_number": "227465170401",
+    "project_id": "e-commerce-app-384f8",
+    "storage_bucket": "e-commerce-app-384f8.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:112305148730:android:093f5b397e2797ba8db603",
+        "mobilesdk_app_id": "1:227465170401:android:b31ebe779568779b8796a0",
         "android_client_info": {
           "package_name": "com.example.ecommerce_app"
         }
       },
       "oauth_client": [
         {
-          "client_id": "112305148730-7k42bipob7koiu5s3rbttfpabrd05di9.apps.googleusercontent.com",
+          "client_id": "227465170401-otr3gk60qn95rc542p4vaddr8of5b3sj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ecommerce_app",
+            "certificate_hash": "399787a2511453c2d9ee8b3f23d06162d0dbad94"
+          }
+        },
+        {
+          "client_id": "227465170401-k0cjhq3m69l1jdk5jtt15qg2tr29o0is.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDTlaAFmbTg5AdtX7-hmHGmuXAvEQlq6_k"
+          "current_key": "AIzaSyD7KWGvZPdiXgLKuitKR0NTyfWs_VHV6Q0"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "112305148730-7k42bipob7koiu5s3rbttfpabrd05di9.apps.googleusercontent.com",
+              "client_id": "227465170401-k0cjhq3m69l1jdk5jtt15qg2tr29o0is.apps.googleusercontent.com",
               "client_type": 3
             },
             {
-              "client_id": "112305148730-fvb43ck2djn6nvj8kq4md8tb13nncrs6.apps.googleusercontent.com",
+              "client_id": "227465170401-4vgb1otk4hulg5rbe3u9u67cshmq619v.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
                 "bundle_id": "com.example.ecommerceApp"

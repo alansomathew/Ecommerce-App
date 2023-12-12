@@ -34,7 +34,7 @@ class SignupController extends GetxController {
     try {
       // Start Loading
       FullscreenLoader.openLoadingDialog(
-          'We are processing your information', TImages.staticSuccessIllustration);
+          'We are processing your information', TImages.docerAnimation);
 
       // Check Internet Connectivity
       final isConnected = await NetworkManager.instance.isConnected();
@@ -92,6 +92,9 @@ class SignupController extends GetxController {
 
       // show some Generic Error to the user
       Loaders.errorSnackBar(title: 'oh Snap!', message: e.toString());
+    } finally {
+      // Remove loader
+      FullscreenLoader.stopLoadingDialog();
     }
   }
 }

@@ -1,6 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:ecommerce_app/features/authentication/models/user_model.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+
+import 'package:ecommerce_app/features/authentication/models/user_model.dart';
+import 'package:ecommerce_app/utils/exceptions/firebase_exceptions.dart';
+import 'package:ecommerce_app/utils/exceptions/format_exceptions.dart';
+import 'package:ecommerce_app/utils/exceptions/platform_exceptions.dart';
 
 //! Repository class for user related operations.
 class UserRepository extends GetxController {
@@ -13,10 +18,13 @@ class UserRepository extends GetxController {
   Future<void> saveUserRecord(UserModel user) async {
     try {
       await _db.collection('users').doc(user.id).set(user.toJson());
-    }
-    
-    
-     catch (e) {
+    } on FirebaseException catch (e) {
+      throw TFirebaseException(e.code).message;
+    } on FormatException catch (_) {
+      throw const TFormatException();
+    } on PlatformException catch (e) {
+      throw TPlatformException(e.code).message;
+    } catch (e) {
       throw 'something went wrong. Please try again';
     }
   }

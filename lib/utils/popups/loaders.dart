@@ -15,7 +15,8 @@ class Loaders {
         duration: const Duration(seconds: 3),
         backgroundColor: Colors.transparent,
         content: Container(
-          padding: const EdgeInsets.symmetric(horizontal: 30),
+          padding: const EdgeInsets.all(12.0),
+          margin: const EdgeInsets.symmetric(horizontal: 30),
           decoration: BoxDecoration(
               color: THelperFunctions.isDarkMode(Get.context!)
                   ? TColors.darkerGrey.withOpacity(0.9)

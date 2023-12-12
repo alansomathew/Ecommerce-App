@@ -22,21 +22,12 @@ class FullscreenLoader {
       builder: (_) => PopScope(
         canPop: false, //Disable popping with the back button
         child: Container(
-          color: THelperFunctions.isDarkMode(Get.context!)
-              ? TColors.dark
-              : TColors.white,
-          width: double.infinity,
-          height: double.infinity,
-          child: SingleChildScrollView(
-            child: Column(
-              mainAxisSize: MainAxisSize.max,
-              children: [
-                const SizedBox(height: 250), //Adjust the spacing as needed
-                AnimationLoaderWidget(text: text, animation: animation),
-              ],
-            ),
-          ),
-        ),
+            color: THelperFunctions.isDarkMode(Get.context!)
+                ? TColors.dark
+                : TColors.white,
+            width: double.infinity,
+            height: double.infinity,
+            child: AnimationLoaderWidget(text: text, animation: animation)),
       ),
     );
   }

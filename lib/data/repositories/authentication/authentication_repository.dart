@@ -1,3 +1,6 @@
+import 'package:ecommerce_app/utils/exceptions/firebase_exceptions.dart';
+import 'package:ecommerce_app/utils/exceptions/format_exceptions.dart';
+import 'package:ecommerce_app/utils/exceptions/platform_exceptions.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
@@ -62,13 +65,14 @@ class AuthenticationRepository extends GetxController {
       return await _auth.createUserWithEmailAndPassword(
           email: email, password: password);
     } on FirebaseAuthException catch (e) {
-      throw FirebaseAuthExceptions(e.code).message;
+      print(e);
+      throw TFirebaseAuthException(e.code).message;
     } on FirebaseException catch (e) {
-      throw 'something went wrong. Please try again ${e.code}';
+      throw TFirebaseException(e.code).message;
     } on FormatException catch (_) {
-      throw 'something went wrong. Please try again';
+      throw const TFormatException();
     } on PlatformException catch (e) {
-      throw 'something went wrong. Please try again ${e.code}';
+      throw TPlatformException(e.code).message;
     } catch (e) {
       throw 'something went wrong. Please try again';
     }
