@@ -2,7 +2,6 @@ import 'package:ecommerce_app/utils/exceptions/firebase_exceptions.dart';
 import 'package:ecommerce_app/utils/exceptions/format_exceptions.dart';
 import 'package:ecommerce_app/utils/exceptions/platform_exceptions.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:get/get.dart';
@@ -41,11 +40,6 @@ class AuthenticationRepository extends GetxController {
     } else {
       //* Local Storage
 
-      if (kDebugMode) {
-        print('------------ Get Storage AuthRepo ------------');
-        print(deviceStorage.read('IsFirstTime'));
-      }
-
       deviceStorage.writeIfNull('IsFirstTime', true);
       deviceStorage.read('IsFirstTime') != true
           ? Get.offAll(() => const LoginScreen())
@@ -55,7 +49,25 @@ class AuthenticationRepository extends GetxController {
 
   /* ------------- Email and password sign-in ------------- */
 
-  // * [EmailAuthentication] - SignIn
+  // * [EmailAuthentication] - LOGIN
+
+  Future<UserCredential> loginWithEmailAndPassword(
+      String email, String password) async {
+    try {
+      return await _auth.signInWithEmailAndPassword(
+          email: email, password: password);
+    } on FirebaseAuthException catch (e) {
+      throw TFirebaseAuthException(e.code).message;
+    } on FirebaseException catch (e) {
+      throw TFirebaseException(e.code).message;
+    } on FormatException catch (_) {
+      throw const TFormatException();
+    } on PlatformException catch (e) {
+      throw TPlatformException(e.code).message;
+    } catch (e) {
+      throw 'something went wrong. Please try again';
+    }
+  }
 
   // * [EmailAuthentication] - Register
 
@@ -127,4 +139,6 @@ class AuthenticationRepository extends GetxController {
   }
 
   // * Delete User - Remove user Auth and Firestore Account
+
+  
 }
