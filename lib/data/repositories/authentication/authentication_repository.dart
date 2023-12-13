@@ -65,7 +65,6 @@ class AuthenticationRepository extends GetxController {
       return await _auth.createUserWithEmailAndPassword(
           email: email, password: password);
     } on FirebaseAuthException catch (e) {
-      print(e);
       throw TFirebaseAuthException(e.code).message;
     } on FirebaseException catch (e) {
       throw TFirebaseException(e.code).message;
@@ -84,15 +83,15 @@ class AuthenticationRepository extends GetxController {
 
   Future<void> sendMailVerification() async {
     try {
-      await _auth.currentUser!.sendEmailVerification();
+      await _auth.currentUser?.sendEmailVerification();
     } on FirebaseAuthException catch (e) {
-      throw 'something went wrong. Please try again ${e.code}';
+      throw TFirebaseAuthException(e.code).message;
     } on FirebaseException catch (e) {
-      throw 'something went wrong. Please try again ${e.code}';
+      throw TFirebaseException(e.code).message;
     } on FormatException catch (_) {
-      throw 'something went wrong. Please try again';
+      throw const TFormatException();
     } on PlatformException catch (e) {
-      throw 'something went wrong. Please try again ${e.code}';
+      throw TPlatformException(e.code).message;
     } catch (e) {
       throw 'something went wrong. Please try again';
     }
@@ -115,13 +114,13 @@ class AuthenticationRepository extends GetxController {
       await _auth.signOut();
       Get.offAll(() => const LoginScreen());
     } on FirebaseAuthException catch (e) {
-      throw 'something went wrong. Please try again ${e.code}';
+      throw TFirebaseAuthException(e.code).message;
     } on FirebaseException catch (e) {
-      throw 'something went wrong. Please try again ${e.code}';
+      throw TFirebaseException(e.code).message;
     } on FormatException catch (_) {
-      throw 'something went wrong. Please try again';
+      throw const TFormatException();
     } on PlatformException catch (e) {
-      throw 'something went wrong. Please try again ${e.code}';
+      throw TPlatformException(e.code).message;
     } catch (e) {
       throw 'something went wrong. Please try again';
     }

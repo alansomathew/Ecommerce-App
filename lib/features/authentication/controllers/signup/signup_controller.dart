@@ -85,16 +85,15 @@ class SignupController extends GetxController {
       );
 
       // Move to verify Email Screen
-      Get.to(() => VerifyEmailScreen(email: email.text.trim()));
+      Get.to(() => VerifyEmailScreen(
+            email: email.text.trim(),
+          ));
     } catch (e) {
       // Remove loader
       FullscreenLoader.stopLoadingDialog();
 
       // show some Generic Error to the user
       Loaders.errorSnackBar(title: 'oh Snap!', message: e.toString());
-    } finally {
-      // Remove loader
-      FullscreenLoader.stopLoadingDialog();
-    }
+    } 
   }
 }
