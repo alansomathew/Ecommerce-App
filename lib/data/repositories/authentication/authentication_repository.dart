@@ -92,6 +92,24 @@ class AuthenticationRepository extends GetxController {
   }
 
   // * [ReAuthenticate] - ReAuthenticate User
+  // Future<void> reauthenticate({required String? currentPassword}) async {
+  //   try {
+  //     final user = _auth.currentUser;
+  //     final credential = EmailAuthProvider.credential(
+  //         email: user?.email ?? '', password: currentPassword ?? '');
+  //     await user?.reauthenticateWithCredential(credential);
+  //   } on FirebaseAuthException catch (e) {
+  //     throw TFirebaseAuthException(e.code).message;
+  //   } on FirebaseException catch (e) {
+  //     throw TFirebaseException(e.code).message;
+  //   } on FormatException catch (_) {
+  //     throw const TFormatException();
+  //   } on PlatformException catch (e) {
+  //     throw TPlatformException(e.code).message;
+  //   } catch (e) {
+  //     throw 'something went wrong. Please try again';
+  //   }
+  // }
 
   // * [EmailVerification] - Mail Verification
 
@@ -112,6 +130,22 @@ class AuthenticationRepository extends GetxController {
   }
 
   // * [EmailAuthentication] - Forget PASSWORD
+
+  Future<void> sendPasswordResetEmail(String email) async {
+    try {
+      await _auth.sendPasswordResetEmail(email: email);
+    } on FirebaseAuthException catch (e) {
+      throw TFirebaseAuthException(e.code).message;
+    } on FirebaseException catch (e) {
+      throw TFirebaseException(e.code).message;
+    } on FormatException catch (_) {
+      throw const TFormatException();
+    } on PlatformException catch (e) {
+      throw TPlatformException(e.code).message;
+    } catch (e) {
+      throw 'something went wrong. Please try again';
+    }
+  }
 
   /* ------------- Federated identity & social sign-in ------------- */
 
