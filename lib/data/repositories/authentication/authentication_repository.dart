@@ -2,6 +2,7 @@ import 'package:ecommerce_app/utils/exceptions/firebase_exceptions.dart';
 import 'package:ecommerce_app/utils/exceptions/format_exceptions.dart';
 import 'package:ecommerce_app/utils/exceptions/platform_exceptions.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:get/get.dart';
@@ -12,6 +13,7 @@ import 'package:ecommerce_app/features/authentication/screens/onboarding/onboard
 import 'package:ecommerce_app/features/authentication/screens/signup/verify_email.dart';
 import 'package:ecommerce_app/navigation_menu.dart';
 import 'package:ecommerce_app/utils/exceptions/firebase_auth_exceptions.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 class AuthenticationRepository extends GetxController {
   static AuthenticationRepository get instance => Get.find();
@@ -115,6 +117,41 @@ class AuthenticationRepository extends GetxController {
 
   // * [GoogleAuthentication] - Google
 
+  Future<UserCredential?> signInWithGoogle() async {
+    try {
+      // Trigger the authenticatio flow
+      final GoogleSignInAccount? userAccount = await GoogleSignIn().signIn();
+
+      // Obtain the auth details from the request
+      final GoogleSignInAuthentication? googleAuth =
+          await userAccount?.authentication;
+
+      // Create a new credential
+      final credential = GoogleAuthProvider.credential(
+        accessToken: googleAuth?.accessToken,
+        idToken: googleAuth?.idToken,
+      );
+
+      // Once signed in, return the UserCredential
+      return await _auth.signInWithCredential(credential);
+    } on FirebaseAuthException catch (e) {
+      throw TFirebaseAuthException(e.code).message;
+    } on FirebaseException catch (e) {
+      throw TFirebaseException(e.code).message;
+    } on FormatException catch (_) {
+      throw const TFormatException();
+    } on PlatformException catch (e) {
+      print(e);
+      throw TPlatformException(e.code).message;
+    } catch (e) {
+      if (kDebugMode) {
+        print('something went wrong: $e');
+      }
+      // throw 'something went wrong. Please try again';
+      return null;
+    }
+  }
+
   // * [FacebookAuthentication] - FaceBook
 
   /* ------------- ./end Federated identity & social sign-in ------------- */
@@ -139,6 +176,4 @@ class AuthenticationRepository extends GetxController {
   }
 
   // * Delete User - Remove user Auth and Firestore Account
-
-  
 }
