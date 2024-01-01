@@ -1,5 +1,6 @@
 import 'package:ecommerce_app/data/repositories/authentication/authentication_repository.dart';
 import 'package:ecommerce_app/features/authentication/screens/login/login.dart';
+import 'package:ecommerce_app/features/personalization/screens/profile/widgets/re_authenticate_user_login_form.dart';
 import 'package:ecommerce_app/utils/constants/image_strings.dart';
 import 'package:ecommerce_app/utils/constants/sizes.dart';
 import 'package:ecommerce_app/utils/network/network_manager.dart';
@@ -11,12 +12,14 @@ import 'package:get/get.dart';
 import 'package:ecommerce_app/data/repositories/user/user_repository.dart';
 import 'package:ecommerce_app/features/authentication/models/user_model.dart';
 import 'package:ecommerce_app/utils/popups/loaders.dart';
+import 'package:image_picker/image_picker.dart';
 
 class UserController extends GetxController {
   static UserController get instance => Get.find();
 
   //* variables
   final profileLoading = false.obs;
+  final imageUploading = false.obs;
   Rx<UserModel> user = UserModel.empty().obs;
   final userRepository = Get.put(UserRepository());
 
@@ -46,25 +49,33 @@ class UserController extends GetxController {
   //* Save user Record from any Registration provider
   Future<void> saveUserRecord(UserCredential? userCredential) async {
     try {
-      if (userCredential != null) {
-        // Convert Name to first and last name
-        final nameParts =
-            UserModel.nameParts(userCredential.user!.displayName ?? '');
-        final userName =
-            UserModel.generateUsername(userCredential.user!.displayName ?? '');
-        // Map Data
-        final user = UserModel(
-          id: userCredential.user!.uid,
-          firstName: nameParts[0],
-          lastName: nameParts.length > 1 ? nameParts.sublist(1).join(' ') : '',
-          username: userName,
-          email: userCredential.user!.email ?? '',
-          phoneNumber: userCredential.user!.phoneNumber ?? '',
-          profilePicture: userCredential.user!.photoURL ?? '',
-        );
+      // First Update Rx user and then check if user data is already stored.if not store new data
+      await fetchUserRecord();
 
-        // Save User Data
-        await userRepository.saveUserRecord(user);
+      // Check if no user data is already stored
+
+      if (user.value.id.isEmpty) {
+        if (userCredential != null) {
+          // Convert Name to first and last name
+          final nameParts =
+              UserModel.nameParts(userCredential.user!.displayName ?? '');
+          final userName = UserModel.generateUsername(
+              userCredential.user!.displayName ?? '');
+          // Map Data
+          final user = UserModel(
+            id: userCredential.user!.uid,
+            firstName: nameParts[0],
+            lastName:
+                nameParts.length > 1 ? nameParts.sublist(1).join(' ') : '',
+            username: userName,
+            email: userCredential.user!.email ?? '',
+            phoneNumber: userCredential.user!.phoneNumber ?? '',
+            profilePicture: userCredential.user!.photoURL ?? '',
+          );
+
+          // Save User Data
+          await userRepository.saveUserRecord(user);
+        }
       }
     } catch (e) {
       Loaders.warningSnackBar(
@@ -120,7 +131,7 @@ class UserController extends GetxController {
           Get.offAll(() => const LoginScreen());
         } else if (provider == 'password') {
           FullscreenLoader.stopLoadingDialog();
-          Get.offAll(() => const LoginScreen());
+          Get.offAll(() => const ReAuthLoginForm());
         }
       }
     } catch (e) {
@@ -162,6 +173,38 @@ class UserController extends GetxController {
       FullscreenLoader.stopLoadingDialog();
       // show success message
       Loaders.errorSnackBar(title: 'oh Snap', message: e.toString());
+    }
+  }
+
+  //* Update User Profile Picture
+  uploadUserProfilePicture() async {
+    try {
+      final image = await ImagePicker().pickImage(
+        source: ImageSource.gallery,
+        imageQuality: 70,
+        maxHeight: 520,
+        maxWidth: 512,
+      );
+      if (image != null) {
+        imageUploading.value = true;
+        final imageUrl =
+            await userRepository.uploadImage('users/Images/Profile/', image);
+
+        // update User image Record
+        Map<String, dynamic> json = {'ProfilePicture': imageUrl};
+        await userRepository.updateUserField(json);
+
+        user.value.profilePicture = imageUrl;
+      }
+      // show success message
+      Loaders.successSnackBar(
+          title: 'Congratulations',
+          message: 'Your profile picture has been updated successfully');
+    } catch (e) {
+      // show success message
+      Loaders.errorSnackBar(title: 'oh Snap', message: e.toString());
+    } finally {
+      imageUploading.value = false;
     }
   }
 }

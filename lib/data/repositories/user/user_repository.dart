@@ -1,5 +1,8 @@
+import 'dart:io';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:ecommerce_app/data/repositories/authentication/authentication_repository.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
@@ -7,6 +10,7 @@ import 'package:ecommerce_app/features/authentication/models/user_model.dart';
 import 'package:ecommerce_app/utils/exceptions/firebase_exceptions.dart';
 import 'package:ecommerce_app/utils/exceptions/format_exceptions.dart';
 import 'package:ecommerce_app/utils/exceptions/platform_exceptions.dart';
+import 'package:image_picker/image_picker.dart';
 
 //! Repository class for user related operations.
 class UserRepository extends GetxController {
@@ -103,6 +107,22 @@ class UserRepository extends GetxController {
       throw 'something went wrong. Please try again';
     }
   }
-  //* upload any image
 
+  //* upload any image
+  Future<String> uploadImage(String path, XFile image) async {
+    try {
+      final ref = FirebaseStorage.instance.ref(path).child(image.name);
+      await ref.putFile(File(image.path));
+      final url = await ref.getDownloadURL();
+      return url;
+    } on FirebaseException catch (e) {
+      throw TFirebaseException(e.code).message;
+    } on FormatException catch (_) {
+      throw const TFormatException();
+    } on PlatformException catch (e) {
+      throw TPlatformException(e.code).message;
+    } catch (e) {
+      throw 'something went wrong. Please try again';
+    }
+  }
 }
