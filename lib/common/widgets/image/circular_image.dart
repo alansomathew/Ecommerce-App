@@ -1,5 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:ecommerce_app/utils/popups/shimmer_effect.dart';
+import 'package:ecommerce_app/common/widgets/shimmers/shimmer_effect.dart';
 import 'package:flutter/material.dart';
 
 import 'package:ecommerce_app/utils/constants/colors.dart';

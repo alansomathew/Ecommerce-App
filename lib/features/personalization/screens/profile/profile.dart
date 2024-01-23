@@ -1,5 +1,5 @@
 import 'package:ecommerce_app/features/personalization/screens/profile/widgets/change_name.dart';
-import 'package:ecommerce_app/utils/popups/shimmer_effect.dart';
+import 'package:ecommerce_app/common/widgets/shimmers/shimmer_effect.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
